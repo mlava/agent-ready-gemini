@@ -1,0 +1,15 @@
+description = "Scan a URL for AI agent-readability (Vercel spec, llms.txt, agent manifests)."
+prompt = """Run the Agent Ready scanner on the URL the user provided and summarize the results.
+
+!{npx -y agent-ready-scanner@latest scan {{args}} --json --no-color}
+
+From the JSON above, report:
+- The Vercel readability score (0-100) and its rating.
+- The llms.txt score (0-100).
+- Pages scanned vs discovered.
+- Every check that did NOT pass, with its message and the fix guidance (howToFix).
+- The shareable report link if one is present.
+
+If the command output is an authentication error, tell the user the scan command needs a Pro API
+key: set it with `gemini extensions config agent-ready` or export AGENT_READY_API_KEY in the shell.
+The `ask` command is public and needs no key."""

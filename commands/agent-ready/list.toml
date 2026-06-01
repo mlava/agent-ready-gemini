@@ -1,0 +1,10 @@
+description = "List recent Agent Ready scans (supports --limit and --cursor)."
+prompt = """List the user's recent Agent Ready scans.
+
+!{npx -y agent-ready-scanner@latest list {{args}} --json --no-color}
+
+Present the results as a compact table: score, id, domain, and created time, newest first. If a
+nextCursor is present, tell the user they can page further with `/agent-ready:list --cursor <value>`.
+
+If the output is an authentication error, the user needs a Pro API key: set it with
+`gemini extensions config agent-ready` or export AGENT_READY_API_KEY in the shell."""

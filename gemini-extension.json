@@ -1,0 +1,27 @@
+{
+  "name": "agent-ready",
+  "version": "0.1.0",
+  "description": "Scan any URL for AI agent-readability (Vercel Agent Readability Spec, llms.txt, agent-protocol manifests) via the Agent Ready scanner.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "agent-ready": {
+      "command": "npx",
+      "args": ["-y", "agent-ready-mcp@latest"],
+      "cwd": "${extensionPath}"
+    }
+  },
+  "settings": [
+    {
+      "name": "Agent Ready API key",
+      "description": "Pro API key (ar_live_...) from https://agent-ready.dev/dashboard/api-keys. Required for scan/get/list; the ask tool is public.",
+      "envVar": "AGENT_READY_API_KEY",
+      "sensitive": true
+    },
+    {
+      "name": "Agent Ready API URL",
+      "description": "Override the API base URL (defaults to https://agent-ready.dev).",
+      "envVar": "AGENT_READY_API_URL",
+      "sensitive": false
+    }
+  ]
+}

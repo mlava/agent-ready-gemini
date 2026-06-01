@@ -1,0 +1,11 @@
+description = "Fetch a previous Agent Ready scan by its id."
+prompt = """Fetch the Agent Ready scan whose id the user provided and summarize it.
+
+!{npx -y agent-ready-scanner@latest get {{args}} --json --no-color}
+
+If the scan is still running, say so and suggest re-running this command shortly. Otherwise report
+the Vercel score and rating, the llms.txt score, pages scanned, and any non-passing checks with
+their fix guidance. Include the shareable report link if present.
+
+If the output is an authentication error, the user needs a Pro API key: set it with
+`gemini extensions config agent-ready` or export AGENT_READY_API_KEY in the shell."""

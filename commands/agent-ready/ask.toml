@@ -1,0 +1,10 @@
+description = "Ask Agent Ready in natural language about its scoring, checks, and supported specs (no API key needed)."
+prompt = """Answer the user's question using Agent Ready's own documentation corpus (scoring
+methodology, the check registry, and the specs it validates). This endpoint is public — no API key
+required.
+
+!{npx -y agent-ready-scanner@latest ask {{args}} --json --no-color}
+
+Summarize the results above in plain language, citing the relevant check ids, methodology points,
+or specs. Include the source URLs from the results so the user can read more. If there are no
+results, say so and suggest rephrasing the question."""
