@@ -101,6 +101,20 @@ This works cleanly here because the extension stays within the portable subset:
 - `GEMINI.md` keeps working as the context file.
 - No custom themes or Node-only API dependencies (the only things that don't migrate).
 
+### Using it in Antigravity (after import)
+
+Invocation differs from Gemini CLI — this is expected:
+
+- There is **no `/agent-ready:scan` slash command** in `agy`. The commands become **skills**
+  (named `scan`, `get`, `list`, `ask` under `~/.gemini/config/plugins/agent-ready/skills/`) that the
+  agent invokes, and the **MCP tools** (`scan_site`, `get_scan`, `ask`) are called by the agent
+  directly. Just ask in natural language, e.g. *"use agent-ready to scan https://example.com"* or
+  *"ask agent-ready how the score is calculated"* (the latter is public, no key).
+- **API key:** the imported `~/.gemini/config/plugins/agent-ready/mcp_config.json` has `env: null`.
+  For keyed `scan`/`get`/`list`, add your key there
+  (`"env": { "AGENT_READY_API_KEY": "ar_live_…" }`) for the MCP tools, and/or
+  `export AGENT_READY_API_KEY=ar_live_…` in your shell for the skill shell-outs. `ask` needs no key.
+
 ## What's in here
 
 ```
