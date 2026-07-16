@@ -15,9 +15,10 @@ exposes itself to LLMs, AI search engines, and autonomous agents — against the
 (`llms.txt` / `llms-full.txt`), and agent-protocol manifests (MCP server cards,
 A2A agent cards, `agents.json`, `agent-permissions.json`, UCP, x402, NLWeb, plus
 API Catalog, Web Bot Auth, Agent Skills Discovery, and agent-driven UI / A2UI).
-A scan returns a Vercel readability score (0–100 + rating) and an llms.txt score
-(0–100), with a per-check `howToFix` for every failing check. It does **not**
-edit the target site.
+A scan returns a Vercel readability score (0–100 + rating), an llms.txt score
+(0–100), and a separate accessibility score (0–100, or null when no accessibility
+checks ran; WCAG 2.2 / layout stability), with a per-check `howToFix` for every
+failing check. It does **not** edit the target site.
 
 ## What's in this repo
 

@@ -8,8 +8,10 @@ AI search engines, and autonomous agents. It checks a page/site against:
 - agent-protocol manifests (MCP server cards, A2A, `agents.json`, `agent-permissions.json`, UCP,
   x402, NLWeb).
 
-A scan returns two scores — a **Vercel readability score** (0–100, with a rating) and an
-**llms.txt score** (0–100) — plus per-check findings with remediation hints.
+A scan returns three scores — a **Vercel readability score** (0–100, with a rating), an
+**llms.txt score** (0–100), and a separate **accessibility score** (0–100, or null when no
+accessibility checks ran; WCAG 2.2 / layout stability) — plus per-check findings with remediation
+hints.
 
 ## Capabilities exposed by this extension
 

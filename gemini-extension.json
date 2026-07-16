@@ -1,6 +1,6 @@
 {
   "name": "agent-ready",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scan any URL for AI agent-readability (Vercel Agent Readability Spec, llms.txt, agent-protocol manifests) via the Agent Ready scanner.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {

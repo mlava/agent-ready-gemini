@@ -6,6 +6,7 @@ prompt = """Run the Agent Ready scanner on the URL the user provided and summari
 From the JSON above, report:
 - The Vercel readability score (0-100) and its rating.
 - The llms.txt score (0-100).
+- The accessibility score (0-100) if present — a separate WCAG 2.2 / layout-stability sub-score.
 - Pages scanned vs discovered.
 - Every check that did NOT pass, with its message and the fix guidance (howToFix).
 - The shareable report link if one is present.
