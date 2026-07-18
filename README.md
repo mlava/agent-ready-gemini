@@ -19,8 +19,10 @@ It gives Gemini two ways to use Agent Ready:
 
 - [Gemini CLI](https://geminicli.com) installed.
 - Node.js ≥ 20 (for the `npx`-launched MCP server and CLI).
-- A Pro API key from <https://agent-ready.dev/dashboard/api-keys> for `scan`/`get`/`list`.
-  The `ask` tool/command is **public** and needs no key.
+- **No API key required to start** — `scan`/`scan_site` and `ask` work on the free
+  anonymous tier (scan: 3 per 30 days per IP, 25-page depth). A Pro API key from
+  <https://agent-ready.dev/dashboard/api-keys> unlocks `get`/`list` (scan history),
+  deeper 250-page scans, and higher volume.
 
 ## Install
 
@@ -42,7 +44,9 @@ gemini extensions disable agent-ready
 gemini extensions uninstall agent-ready
 ```
 
-## Configure the API key
+## Configure the API key (optional)
+
+Only needed for `get`/`list` and deeper scans — `scan` and `ask` work keyless.
 
 ```bash
 gemini extensions config agent-ready

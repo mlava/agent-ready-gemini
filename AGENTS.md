@@ -31,9 +31,11 @@ failing check. It does **not** edit the target site.
 - `ask` — natural-language search over Agent Ready's methodology, check
   registry, and validated specs. **Public; no API key.** Cheapest path for
   questions *about* Agent Ready.
-- `scan_site` — scan a live URL; returns scores + per-check findings. **Needs a
-  Pro API key.**
-- `get_scan` — fetch a previous scan by id. **Needs a Pro API key.**
+- `scan_site` — scan a live URL; returns scores + per-check findings. **Works
+  without a key** (anonymous free tier, 25-page cap); a Pro key unlocks 250-page
+  scans and higher volume.
+- `get_scan` — fetch a previous scan by id. **Needs a Pro API key** (scan history
+  is account-scoped; keyless `scan_site` returns its full result inline).
 - Slash commands (user-invoked): `/agent-ready:scan <url>`, `:get <id>`,
   `:list`, `:ask <question>`.
 
@@ -47,10 +49,11 @@ gemini extensions install https://github.com/mlava/agent-ready-gemini
 
 ## Configuration
 
-`scan_site` / `get_scan` (and the `scan`/`get`/`list` commands) require a Pro
-API key from <https://agent-ready.dev/dashboard/api-keys>. Set it with
-`gemini extensions config agent-ready` (stored as `AGENT_READY_API_KEY`). The
-`ask` tool/command is public and needs no key.
+`scan_site` and the `scan` command work with no key on the anonymous free tier.
+`get_scan` and the `get`/`list` commands require a Pro API key from
+<https://agent-ready.dev/dashboard/api-keys> (a Pro key also deepens scans to
+250 pages). Set it with `gemini extensions config agent-ready` (stored as
+`AGENT_READY_API_KEY`). The `ask` tool/command is public and needs no key.
 
 ## Usage
 
