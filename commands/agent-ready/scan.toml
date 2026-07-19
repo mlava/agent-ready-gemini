@@ -11,6 +11,9 @@ From the JSON above, report:
 - Every check that did NOT pass, with its message and the fix guidance (howToFix).
 - The shareable report link if one is present.
 
-If the command output is an authentication error, tell the user the scan command needs a Pro API
-key: set it with `gemini extensions config agent-ready` or export AGENT_READY_API_KEY in the shell.
-The `ask` command is public and needs no key."""
+This command works with no API key on the free anonymous tier (3 scans per 30 days per IP, 25-page
+depth). If the output says the anonymous quota is exhausted (quota_exhausted / 429), tell the user
+they can wait for the reset date shown, or get a Pro API key (250-page scans, higher volume, scan
+history) at <https://agent-ready.dev/dashboard/api-keys> — set it with `gemini extensions config
+agent-ready` or export AGENT_READY_API_KEY in the shell. The `ask` command is public and needs no
+key."""
